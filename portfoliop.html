@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" >
+<head>
+  <style>
+.text-shadow-light-blue {
+    text-shadow:0px 0px 1px rgba(200, 200, 200, 0.8); /* pink shadow */
+}
+.text-shadow-black{
+    text-shadow:0px 0px 1px black;
+}
+.text-shadow-white{
+    text-shadow:0px 0px 1px white; 
+}
+.transform {
+    transform: translateX(0);
+  }
+  
+  .-translate-x-full {
+    transform: translateX(-100%);
+  }
+  #sideMenu {
+    transition: transform 0.5s ease-in-out;
+}
+#sun-icon {
+    filter: invert(0) brightness(1);
+}
+
+/* Sun icon color in dark mode */
+.dark #sun-icon {
+    filter: invert(1) brightness(1) contrast(0); /* Increase brightness and contrast */
+}
+.text-shadow-custom{
+      text-shadow: 0px 0px 4px rgba(50, 0, 50, 0.6); /* Dark pinkish shadow */
+}
+.font-jenna-sue{
+    font-family: 'Jenna Sue', cursive; 
+}
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lami Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Jenna+Sue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <script src="./test.js"></script>
+
+  
+</head>
+ <!--START wanted an image DIDNT REALLY WORK OUT-->
+<body class="overflow-x-hidden  dark:bg-darkTheme dark:text-white">
+
+   <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"  >
+   </div>
+<!--END WILL GET BACK TO IT-->
+
+<nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 
+bg-gradient-to-r from-[#F0F8FF] to-pink-100 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-900 dark:to-black p-4">
+  <h1 class="w-28 cursor-pointer mr-14 text-2xl font-bold hidden lg:block 
+  text-shadow-custom font-jenna-sue dark:text-white">Olamide.</h1>    
+
+  <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 dark:bg-gray-800 dark:bg-opacity-50 dark:text-white">
+    <li><a href="#home" class="dark:text-gray-300  hover:font-bold hover:shadow-hover-light transition-all duration-600 text-shadow-custom"> Home </a></li>
+    <li><a href="#about" class="dark:text-gray-300 hover:font-bold hover:shadow-hover-light transition-all duration-500 text-shadow-custom"> About me </a></li>
+    <li><a href="#experience"class="dark:text-gray-300 hover:font-bold hover:shadow-hover-light transition-all duration-500 text-shadow-custom"> Experience </a></li>
+    <li><a href="#projects" class="dark:text-gray-300 hover:font-bold hover:shadow-hover-light transition-all duration-500 text-shadow-custom"> Projects </a></li>
+    <li><a href="#contact" class="dark:text-gray-300 hover:font-bold hover:shadow-hover-light transition-all duration-500 text-shadow-custom"> Contact </a></li>
+  </ul>
+
+  <div class="flex items-center gap-4">
+    <button id="theme-toggle" class="flex items-center">
+        <img src="110827_moon_icon.png" alt="Moon Icon" id="moon-icon" class="w-10 h-10 focus:outline-none">
+        <img src="icons8-sun.svg" alt="Sun Icon" id="sun-icon" class="w-6 h-5 hidden dark:block">
+    </button>
+</div>
+
+    <a href="#contact" class="hidden lg:flex items-center gap-3 px-10 py-2.5 
+    border border-gray-500 
+    dark:border-gray-300 rounded-full ml-4 dark:text-white"> Contact </a>
+
+    <button class="hamburger flex flex-col items-center
+     justify-center w-6 h-5 rounded focus:outline-none
+     md:hidden ml-3  dark:text-white" onclick="openMenu()">
+      <span class="line1 block w-5 h-1 bg-black dark:bg-white mb-1"></span>
+      <span class="line2 block w-5 h-1 bg-black dark:bg-white mb-1"></span>
+      <span class="line3 block w-5 h-1 bg-black dark:bg-white mb-1"></span>
+    </button>
+  </div> 
+
+  <!-- Mobile menu -->
+  <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 dark:bg-gray-900 dark:text-white transition duration-500">
+    <button id="close-btn" class="close-icon absolute top-2 right-2 w-12 h-12 bg-rose-50 dark:bg-gray-900 text-black dark:text-white rounded-full flex items-center justify-center focus:outline-none" onclick="closeMenu()">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <li><a href="#home" onclick="closeMenu()"> Home </a></li>
+    <li><a href="#about" onclick="closeMenu()"> About me </a></li>
+    <li><a href="#experience" onclick="closeMenu()"> Experience </a></li>
+    <li><a href="#projects" onclick="closeMenu()"> Projects </a></li>
+    <li><a href="#contact" onclick="closeMenu()"> Contact </a></li>
+  </ul>
+</nav>
+
+<!-------------------        HEADER         -------->
+
+<div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+
+    <img src="Lamidelinkedinprofile.jpg" alt="" class="rounded-full h-32 w-32 object-cover">
+    <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 text-shadow-light-blue dark:text-white">
+      <span>👋</span> Hi! I'm Olamide Soleye
+    </h3>
+    <h1 class="text-xl sm:text-4xl lg:text-4xl text-shadow-light-blue dark:text-white">
+      Chemical Engineer
+    </h1>
+    <p class="max-w-2xl mx-auto text-shadow-light-blue dark:text-gray-300">
+      "Embracing continuous learning is not just about acquiring new skills—
+      it's a commitment to personal and professional growth."
+    </p>
+  
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+      <a href="#contact" class="px-10 py-3 border rounded-full font-bold bg-gradient-to-r from-[#F8BBD0] via-[#ADD8E6] to-[#C2185B] text-white text-wrap flex items-center gap-2 bg-gradient-to-r hover:from-[#E799BD] hover:via-[#92C2D8] hover:to-[#A0174A] text-shadow-black transition-all duration-300">
+        Contact me
+      </a>
+      
+    </div>
+   </div>
+ 
+  
+  <!-- About Me Section -->
+  <div id="about" class="w-full px-[12%] py-10 text-shadow-light-blue dark:text-gray-300 scroll-mt-20">
+    <h4 class="text-center mb-2 text-lg dark:text-gray-400">Introduction</h4>
+    <h2 class="text-center text-4xl dark:text-white">About me</h2>
+  
+    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20 max-w-max mx-auto relative">
+  
+      <!-- Second Column -->
+      <div class="flex-1 mt-0 dark:text-gray-300">
+        <p class="mb-10 max-w-2xl">
+          I am deeply committed to personal and professional growth, with a recent background in chemical engineering, I am enthusiastic about channeling my expertise to the oil and gas industry. My passion lies in developing renewable and sustainable energy solutions to help address real-world challenges and improve lives. I'm also fascinated by the intersection of cutting-edge technology and process designs.
+          <br><br>
+          I work with data-driven approaches and computational tools to optimize processes, and make data-informed decisions using Aspen technology and Minitab software.
+          <br><br>
+          Beyond chemical engineering, I am engaged in front-end development. I enjoy blending aesthetics with functionality to deliver engaging, intuitive user-friendly experiences.
+        </p>
+
+  
+        <section class="space-y-8">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md 
+          hover:bg-[#FCFAFF] hover:-translate-y-2 
+          hover:border hover:border-gray-500 hover:border-opacity-60 
+          duration-500 dark:shadow-lg">
+          <i class="fas fa-graduation-cap"></i> <!-- Graduation cap icon -->
+            <h2 class="text-2xl font-semibold dark:text-white">Education</h2>
+            <p class="mt-2 dark:text-gray-300">2019-2024.</p>
+            <p class="mt-2 dark:text-gray-300">
+              Bachelor's degree in Chemical Engineering,<br>Covenant University
+            </p>
+            <br>
+            <p class="mt-2 dark:text-gray-300">2014-2019.</p>
+            <p class="mt-2 dark:text-gray-300">High School Diploma,<br>Dansol High School</p>
+          </div>
+  
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:bg-[#FCFAFF]
+           hover:-translate-y-2  duration-500 dark:shadow-lg
+           hover:border hover:border-gray-500 hover:border-opacity-60 ">
+           <i class="fas fa-cogs"></i>
+            <h2 class="text-2xl font-semibold dark:text-white">Skills</h2>
+            <p class="mt-2 dark:text-gray-300">
+              Hard Skills:
+              <ul>
+                <li>Chemical engineering fundamentals, Project management, Technical documentation, <br>Process design, Process control, Data analysis</li>
+              </ul>
+            </p>
+  
+            <p class="mt-2 dark:text-gray-300">
+              Soft skills:
+              <ul>
+                <li>Team collaboration, Communication, Adaptability, <br>Time management, Problem-solving.</li>
+              </ul>
+            </p>
+  
+            <p class="mt-2 dark:text-gray-300">
+              Additional skills:
+              <ul>
+                <li>HTML, CSS, Tailwind CSS, Responsive design,<br>Version control, UI/UX design principles.</li>
+              </ul>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  
+    <!-- Experiences Section -->
+    <div id="experience" class="w-full px-[12%] py-10 scroll-mt-20 dark:text-gray-300">
+      <h2 class="text-center text-3xl dark:text-white">Professional Experience</h2>
+      <br>
+  
+      <!-- Experience 2 -->
+      <div class="border-b border-gray-200 py-4 flex flex-col sm:flex-row dark:border-gray-700">
+        <div class="sm:w-1/3 mb-2 sm:mb-0 mr-6">
+          <h3 class="text-lg sm:text-xl font-bold dark:text-white">Process Engineering Intern</h3>
+          <p class="text-gray-600 dark:text-gray-400">Cakasa (Nigeria) Services Limited | Mar 2023 - Sep 2023</p>
+        </div>
+        <div class="sm:w-2/3">
+          <ul class="list-disc list-inside leading-loose dark:text-gray-300">
+            <li>Collaborated with multidisciplinary teams, including mechanical, electrical, and process engineers, as well as operators and safety personnel, to ensure successful project execution.</li>
+            <li>Prepared detailed reports and documentation for process design and analysis.</li>
+            <li>Assisted in the creation and review of P&IDs, ensuring they accurately represented the process flow, equipment, and instrumentation in a plant.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Experience 3 -->
+      <div class="py-4 flex flex-col sm:flex-row">
+        <div class="sm:w-1/3 mb-2 sm:mb-0 mr-6">
+          <h3 class="text-lg sm:text-xl font-bold dark:text-white">Process Engineering Intern</h3>
+          <p class="text-gray-600 dark:text-gray-400">Cakasa (Nigeria) Services Limited | Jun 2022 - Aug 2022</p>
+        </div>
+        <div class="sm:w-2/3">
+          <ul class="list-disc list-inside leading-loose dark:text-gray-300">
+            <li>Estimated the size and specifications of equipment like reactors, distillation columns, and heat exchangers using Aspen HYSYS.</li>
+            <li>Acquired hands-on experience in interpreting process flow diagrams to understand process workflows, instrumentation, and control systems.</li>
+            <li>Gained industry knowledge about plant design and process optimization.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Projects Section -->
+    <div id="projects" class="w-full px-[12%] py-10 scroll-mt-20 dark:text-gray-300">
+      <h2 class="text-center text-4xl dark:text-white">Projects</h2>
+      <br>
+  
+      <section class="space-y-8">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md 
+        hover:bg-[#FCFAFF] hover:-translate-y-2 hover:border hover:border-gray-500 hover:border-opacity-60 
+         duration-500 dark:shadow-lg">
+          <h2 class="text-2xl font-semibold dark:text-white">Final Year Project</h2>
+          <p class="mt-2 dark:text-gray-300">Covenant University | Nov 2023 - July 2024.</p>
+          <p class="mt-4 dark:text-gray-300">
+            Title:
+            <ul>
+              <li>Kinetics study of hibiscus sabdariffa using Saccharomyces cerevisiae and glucose</li>
+            </ul>
+          </p>
+          <p class="mt-2 dark:text-gray-300">
+            Description:
+            <ul>
+              <li>In this research, Minitab software assisted in implementing RSM (Response Surface Methodology), and Taguchi design, which were designed to capture the most relevant data with fewer runs, less time and resources. 
+                <br><br>RSM helped in designing experiments and modeling the effects of the factors considered, such as hibiscus extract concentration, glucose levels, and fermentation time, on yeast activity and product yield.</li>
+            </ul>
+          </p>
+          <p class="mt-2 dark:text-gray-300">
+            Tools used:
+            <ul>
+              <li>Minitab software - Response Surface Methodology, Design of experiments.</li>
+            </ul>
+          </p>
+          <p class="mt-2 dark:text-gray-300">
+            Results:
+            <ul>
+              <li>Developed optimal conditions for better yields and predictive models to guide future experiments.</li>
+            </ul>
+          </p>
+        </div>
+  
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg 
+        shadow-md hover:bg-[#FCFAFF] hover:-translate-y-2 duration-500
+         hover:border hover:border-gray-500 hover:border-opacity-60 
+         dark:shadow-lg">
+          <h2 class="text-2xl font-semibold dark:text-white">Revision and Enhancement of As-Built Documentation within OML 30</h2>
+          <p class="mt-2 dark:text-gray-300">Cakasa (Nigeria) Company Limited | March 2023 - September 2023.</p>
+          <p class="mt-2 dark:text-gray-300">
+            Internship role:<br>
+            <ul>
+              <li>Updated the as-built drawings using CAD software to accurately reflect the current state of the facilities</li><br>
+              <li>Collaborated with engineers, field operators, and document control teams to gather the most up-to-date information on equipment, piping, and instrumentation.</li><br>
+              <li>Ensured all updates adhered to industry standards, company protocols, and regulatory requirements specific to operations.</li><br>
+              <li>Prepared a comprehensive documentation of piping systems - linelisting and valve listing.</li>
+            </ul>
+          </p>
+          <p class="mt-2 dark:text-gray-300">
+            Tools used:
+            <ul>
+              <li>AutoCAD, AVEVA E3D design, MS Excel</li>
+            </ul>
+          </p>
+          <p class="mt-2 dark:text-gray-300">
+            Results:
+            <ul>
+              <li>Strengthened compliance with regulatory and safety standards specific to OML 30 by ensuring all documentation accurately reflected the current installations.</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+   
+    
+     <!-----------       CONTACT ME  ---- -   - -->
+     <div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-no-repeat bg-[length:90%_auto] 
+    bg-center bg-gradient-to-r from-[#F8FCFF] via-[rgba(255,255,255,0)] to-pink-50
+    hover:shadow-black hover:-translate-y-1 duration-500 dark:from-[#1a1a1a] dark:via-[rgba(0,0,0,0)] dark:to-[#2c2c2c]">
+    
+    <h4 class="text-center mb-2 text-lg text-gray-900 dark:text-gray-300">Connect with me</h4>
+    <h2 class="text-center text-4xl text-gray-900 dark:text-gray-100">Get in touch</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-800 dark:text-gray-400">I'd love to hear from you!
+        If you have any questions, comments, or feedback, please use the form below.</p>
+    
+    <form
+     action="https://formspree.io/f/xjkbzzvn" method="post"
+     class="max-w-2xl mx-auto"  >
+          <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Name" name="Name" id="full-name" class="flex-1 p-3 outline-none
+            border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-[#333] dark:border-gray-600 dark:text-gray-200">
+            <input type="text" placeholder="Email" name="Email"  id="email-address" class="flex-1 p-3 outline-none
+            border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-[#333] dark:border-gray-600 dark:text-gray-200">
+           
+        </div>  
+        <textarea
+        rows="6"
+        placeholder="Enter your message"
+        name="message" id="message"
+        class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-[#333] dark:border-gray-600 dark:text-gray-200 mb-6"
+      ></textarea>
+      
+        <button class="py-3 px-8 w-max flex items-center
+        justify-between gap-2 bg-black/80 text-shadow-black text-white 
+        rounded-full mx-auto hover:bg-black duration-500 dark:bg-[#555] dark:hover:bg-[#444]">Submit</button> 
+    </form>
+</div>
+
+<div class="mt-20">
+    <div class="text-center sm:flex items-center justify-between border-t
+    border-gray-400 dark:border-gray-600 mx-[10%] mt-12 py-6">
+        <p class="text-gray-800 dark:text-gray-400"> &copy;Olamide Soleye. All rights reserved</p>
+        <ul class="flex items-center justify-center gap-10 mt-4 sm:mt-0">
+            <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+                 class="text-gray-800 dark:text-gray-400 hover:text-black dark:hover:text-white">LinkedIn</a></li>  
+                
+        </ul>
+    </div>
+</div>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable dark mode via a class
+            theme: {
+                extend: {
+                    colors: {
+                        darkTheme: '#11001F', // Custom dark theme color
+                        // Add more custom colors if needed
+                    },
+                },
+            },
+            plugins: [],
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('theme-toggle');
+    const moonIcon = document.getElementById('moon-icon');
+    const sunIcon = document.getElementById('sun-icon');
+    const htmlElement = document.documentElement;
+
+    // Apply saved theme on load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        htmlElement.classList.add('dark');
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
+    } else if (savedTheme === 'light') {
+        htmlElement.classList.remove('dark');
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+        if (htmlElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+            moonIcon.classList.add('hidden');
+            sunIcon.classList.remove('hidden');
+        } else {
+            localStorage.setItem('theme', 'light');
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+        }
+    });
+});
+         
+        
+    </script>
+</body>
+</html>
